@@ -1,16 +1,16 @@
 <?php
 
-namespace TaskTrail\Project\Actions;
+namespace App\Actions\Project;
 
 use App\Models\Project;
 
-class CreateProject
+class UpdateProject
 {
     public function execute(
+        Project $project,
         string $name,
         string $description
     ): void {
-        $project = new Project;
         $project->name = $name;
         $project->description = $description;
         $project->save();

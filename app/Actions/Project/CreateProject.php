@@ -10,7 +10,7 @@ class CreateProject
         string $name,
         string $description
     ): void {
-        $project = new Project();
+        $project = new Project;
         $project->name = $name;
         $project->description = $description;
         $project->save();
