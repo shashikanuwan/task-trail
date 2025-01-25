@@ -29,8 +29,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/App",
-            "TaskTrail\\": "app/Domain",
+            "App\\": "app/",
+            "TaskTrail\\": "app/Domain/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
