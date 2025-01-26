@@ -2,12 +2,7 @@
     <div class="p-6">
         <h2 class="text-2xl font-semibold mb-4">Projects</h2>
         <ul class="space-y-2">
-            <li>
-                <a href="#" class="block py-2 px-3 rounded-md hover:bg-indigo-300 dark:hover:bg-indigo-700">Project 1</a>
-            </li>
-            <li>
-                <a href="#" class="block py-2 px-3 rounded-md hover:bg-indigo-300 dark:hover:bg-indigo-700">Project 2</a>
-            </li>
+            <x-board.fetch-projects/>
         </ul>
     </div>
     <div class="p-6">
