@@ -6,6 +6,7 @@ use App\Models\Project;
 use function Pest\Laravel\assertDatabaseHas;
 
 it('can update project', function () {
+    /** @var Project $project */
     $project = Project::factory()->create();
 
     resolve(UpdateProject::class)

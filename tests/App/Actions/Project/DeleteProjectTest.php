@@ -6,6 +6,7 @@ use App\Models\Project;
 use function Pest\Laravel\assertDatabaseMissing;
 
 it('can delete project', function () {
+    /** @var Project $project */
     $project = Project::factory()->create();
 
     resolve(DeleteProject::class)->execute($project);
