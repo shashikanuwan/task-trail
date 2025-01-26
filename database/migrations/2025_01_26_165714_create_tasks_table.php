@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->enum('priority', array_map(fn ($case) => $case->value, TaskPriority::cases()));
-            $table->foreignId('project_id')->constrained();
+            $table->foreignId('project_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -6,9 +6,6 @@
         </ul>
     </div>
     <div class="p-6">
-        <button
-            class="w-full py-2 px-4 rounded-lg dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white bg-blue-400 hover:bg-blue-500 text-gray-900">
-            + Create Project
-        </button>
+        <livewire:project.create-project/>
     </div>
 </div>
