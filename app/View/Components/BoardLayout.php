@@ -2,13 +2,13 @@
 
 namespace App\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Illuminate\View\View;
 
-class GuestLayout extends Component
+class BoardLayout extends Component
 {
     public function render(): View
     {
-        return view('layouts.guest');
+        return view('layouts.board');
     }
 }
