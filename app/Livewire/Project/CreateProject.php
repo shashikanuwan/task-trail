@@ -22,7 +22,7 @@ class CreateProject extends Component
         $this->validate();
         $createProject->execute($this->name, $this->description);
 
-        session()->flash('success', 'Post successfully updated.');
+        session()->flash('success', 'Project successfully created.');
 
         $this->redirectRoute('dashboard', navigate: true);
     }
