@@ -2,21 +2,22 @@
 
 namespace App\Models;
 
+use App\Enums\TaskPriority;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property mixed|string $name
  * @property mixed|string $description
+ * @property TaskPriority|mixed $priority
+ * @property mixed $project_id
  * @property mixed $id
  */
-class Project extends Model
+class Task extends Model
 {
     use HasFactory;
 
-    public function tasks(): HasMany
-    {
-        return $this->hasMany(Task::class);
-    }
+    protected $casts = [
+        'priority' => TaskPriority::class,
+    ];
 }
