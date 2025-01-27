@@ -24,6 +24,8 @@
     {{ $slot }}
 </div>
 
+<x-webkit-scrollbar />
+
 @stack('modals')
 @livewireScripts
 </body>
