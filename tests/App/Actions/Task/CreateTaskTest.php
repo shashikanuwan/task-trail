@@ -2,6 +2,7 @@
 
 use App\Actions\Task\CreateTask;
 use App\Enums\TaskPriority;
+use App\Enums\TaskStatus;
 use App\Models\Project;
 
 use function Pest\Laravel\assertDatabaseHas;
@@ -15,6 +16,7 @@ it('can create task', function () {
             'task 1',
             'description 1',
             TaskPriority::HIGH,
+            TaskStatus::PENDING,
             $project
         );
 
@@ -22,6 +24,7 @@ it('can create task', function () {
         'name' => 'task 1',
         'description' => 'description 1',
         'priority' => TaskPriority::HIGH,
+        'status' => TaskStatus::PENDING,
         'project_id' => $project->id,
     ]);
 });

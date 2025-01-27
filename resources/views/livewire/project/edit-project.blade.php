@@ -29,7 +29,7 @@
 
                 <div class="flex justify-end space-x-2">
                     <button type="submit" class="px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-600 text-white">
-                        {{__('Create')}}
+                        {{__('Update')}}
                     </button>
                 </div>
             </form>
