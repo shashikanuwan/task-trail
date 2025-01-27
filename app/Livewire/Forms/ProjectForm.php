@@ -10,10 +10,10 @@ use Livewire\Form;
 class ProjectForm extends Form
 {
     #[Validate('required|max:50')]
-    public string $name;
+    public string $name = '';
 
     #[Validate('required|max:255')]
-    public string $description;
+    public string $description = '';
 
     /**
      * @throws ValidationException
@@ -23,5 +23,7 @@ class ProjectForm extends Form
         $this->validate();
 
         $createProject->execute($this->name, $this->description);
+
+        $this->reset();
     }
 }

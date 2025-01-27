@@ -1,4 +1,6 @@
 <div>
+    <x-flash-message/>
+
     <x-button wire:click="openModal">
         {{__('Create Project')}}
     </x-button>

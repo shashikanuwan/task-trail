@@ -2,7 +2,7 @@
     <div class="p-6">
         <h2 class="text-2xl font-semibold mb-4">Projects</h2>
         <ul class="space-y-2">
-            <x-board.fetch-projects/>
+            <livewire:project.show-projects/>
         </ul>
     </div>
     <div class="p-6">

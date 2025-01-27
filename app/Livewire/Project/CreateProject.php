@@ -24,7 +24,9 @@ class CreateProject extends Component
     {
         $this->form->store($createProject);
 
-        $this->redirectRoute('dashboard', navigate: true);
+        session()->flash('status', 'Post saved.');
+
+        $this->redirectRoute('dashboard');
     }
 
     public function openModal(): void
