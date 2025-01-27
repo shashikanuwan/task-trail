@@ -1,5 +1,5 @@
 <x-board-layout>
 
-    <x-board.fetch-tasks />
+    <livewire:task.show-tasks />
 
 </x-board-layout>

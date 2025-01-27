@@ -1,7 +1,10 @@
 <div>
     @foreach ($projects as $project)
-        <li class="relative group">
-            <a href="#" class="block py-2 px-3 rounded-md hover:bg-indigo-300 dark:hover:bg-indigo-700">
+        <li class="relative group my-2">
+            <a href="{{ route('project.tasks', $project) }}"
+               wire:navigate
+               class="block py-2 px-3 rounded-md
+               {{ request()->is('project/' . $project->slug . '/tasks') ? 'font-bold  bg-zinc-400 dark:bg-zinc-500' : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600' }}">
                 {{ $project->name }}
             </a>
             <!-- Edit and Delete Buttons -->

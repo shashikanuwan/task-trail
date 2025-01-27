@@ -11,7 +11,17 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
+    safelist: [
+        "bg-rose-200", "text-rose-600",
+        "bg-red-200", "text-red-600",
+        "bg-slate-200", "text-slate-600",
+        "bg-green-200", "text-green-600",
+        "bg-amber-200", "text-amber-600",
+        "bg-purple-200", "text-purple-600",
+        "bg-violet-200", "text-violet-600",
+        "bg-emerald-200", "text-emerald-600",
+        "bg-yellow-200", "text-yellow-600"
+    ],
     theme: {
         extend: {
             fontFamily: {

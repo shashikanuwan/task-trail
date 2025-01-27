@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\TaskPriority;
+use App\Enums\TaskStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,5 +20,6 @@ class Task extends Model
 
     protected $casts = [
         'priority' => TaskPriority::class,
+        'status' => TaskStatus::class,
     ];
 }
