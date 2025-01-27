@@ -9,9 +9,9 @@ use Livewire\Component;
 
 class DeleteProject extends Component
 {
-    public $projectId;
+    public int $projectId;
 
-    public function delete(ProjectDeleteProject $deleteProject)
+    public function delete(ProjectDeleteProject $deleteProject): void
     {
         $deleteProject->execute(Project::query()->find($this->projectId));
 

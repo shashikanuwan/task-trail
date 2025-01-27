@@ -3,26 +3,26 @@
 namespace App\Livewire\Project;
 
 use App\Actions\Project\CreateProject as ActionsCreateProject;
+use App\Livewire\Forms\ProjectForm;
 use Illuminate\Contracts\View\View;
-use Livewire\Attributes\Validate;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
+/**
+ * @method emit(string $string)
+ */
 class CreateProject extends Component
 {
     public bool $showModal = false;
 
-    #[Validate('required|max:50')]
-    public string $name;
+    public ProjectForm $form;
 
-    #[Validate('required|max:255')]
-    public string $description;
-
-    public function createProject(ActionsCreateProject $createProject): void
+    /**
+     * @throws ValidationException
+     */
+    public function save(ActionsCreateProject $createProject): void
     {
-        $this->validate();
-        $createProject->execute($this->name, $this->description);
-
-        session()->flash('success', 'Project successfully created.');
+        $this->form->store($createProject);
 
         $this->redirectRoute('dashboard', navigate: true);
     }
