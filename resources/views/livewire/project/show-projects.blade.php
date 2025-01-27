@@ -6,10 +6,9 @@
             </a>
             <!-- Edit and Delete Buttons -->
             <div class="absolute top-0 right-0 hidden group-hover:flex space-x-2 mt-2 mr-2">
-                <button class="text-xs text-white bg-blue-500 hover:bg-blue-600 py-1 px-2 rounded">Edit</button>
+                <livewire:project.edit-project :project="$project"/>
                 <livewire:project.delete-project :projectId="$project->id"/>
             </div>
         </li>
     @endforeach
 </div>
-

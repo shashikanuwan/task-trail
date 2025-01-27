@@ -1,7 +1,7 @@
 <div>
-    <x-button wire:click="openModal">
-        {{__('Create Project')}}
-    </x-button>
+    <button class="text-xs text-white bg-blue-500 hover:bg-blue-600 py-1 px-2 rounded" wire:click="openModal">
+        {{__('Edit')}}
+    </button>
 
     <x-modal wire:model="showModal" maxWidth="md">
         <div class="px-6 py-4">
@@ -36,3 +36,4 @@
         </div>
     </x-modal>
 </div>
+

@@ -2,29 +2,32 @@
 
 namespace App\Livewire\Project;
 
-use App\Actions\Project\CreateProject as ActionsCreateProject;
+use App\Actions\Project\UpdateProject;
 use App\Livewire\Forms\ProjectForm;
+use App\Models\Project;
 use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
-/**
- * @method emit(string $string)
- */
-class CreateProject extends Component
+class EditProject extends Component
 {
+    public ProjectForm $form;
+
     public bool $showModal = false;
 
-    public ProjectForm $form;
+    public function mount(Project $project): void
+    {
+        $this->form->setProject($project);
+    }
 
     /**
      * @throws ValidationException
      */
-    public function save(ActionsCreateProject $createProject): void
+    public function save(UpdateProject $updateProject): void
     {
-        $this->form->store($createProject);
+        $this->form->update($updateProject);
 
-        session()->flash('status', 'Project saved.');
+        session()->flash('status', 'Project updated.');
 
         $this->redirectRoute('dashboard', navigate: true);
     }
@@ -41,6 +44,6 @@ class CreateProject extends Component
 
     public function render(): View
     {
-        return view('livewire.project.create-project');
+        return view('livewire.project.edit-project');
     }
 }
