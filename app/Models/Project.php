@@ -12,6 +12,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property mixed|string $name
  * @property mixed|string $description
  * @property mixed $id
+ * @property mixed $tasks
  */
 class Project extends Model
 {
