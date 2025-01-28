@@ -6,7 +6,7 @@ use App\Actions\Project\CreateProject as ActionsCreateProject;
 use App\Livewire\Project\CreateProject;
 use Livewire\Livewire;
 
-it('create project renders successfully', function () {
+it('can renders create project', function () {
     Livewire::test(CreateProject::class)
         ->assertStatus(200);
 });

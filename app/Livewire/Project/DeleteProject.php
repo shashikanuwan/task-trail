@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Project;
 
-use App\Actions\Project\DeleteProject as ProjectDeleteProject;
+use App\Actions\Project\DeleteProject as ActionsDeleteProject;
 use App\Models\Project;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Locked;
@@ -13,7 +13,7 @@ class DeleteProject extends Component
     #[Locked]
     public int $projectId;
 
-    public function delete(ProjectDeleteProject $deleteProject): void
+    public function delete(ActionsDeleteProject $deleteProject): void
     {
         $deleteProject->execute(Project::query()->find($this->projectId));
 
