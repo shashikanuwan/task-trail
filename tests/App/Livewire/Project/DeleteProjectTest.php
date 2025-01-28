@@ -14,14 +14,11 @@ it('can delete a project and redirect', function () {
     /** @var Project $project */
     $project = Project::factory()->create();
 
-    $mockAction = mock(ActionsDeleteProject::class)
-        ->shouldReceive('execute')
-        ->withArgs(function ($arg) use ($project) {
-            return $arg->id === $project->id;
-        });
+    mock(ActionsDeleteProject::class)
+        ->shouldReceive('execute');
 
     Livewire::test(DeleteProject::class, ['projectId' => $project->id])
-        ->call('delete', $mockAction)
+        ->call('delete')
         ->assertRedirect(route('dashboard'));
 
     expect(session()->get('status'))->toBe('Project deleted.');

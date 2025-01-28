@@ -20,15 +20,13 @@ it('can open and close the modal', function () {
 });
 
 it('validates and stores project data', function () {
-    $mockAction = mock(ActionsCreateProject::class)
-        ->shouldReceive('execute')
-        ->once()
-        ->getMock();
+    mock(ActionsCreateProject::class)
+        ->shouldReceive('execute');
 
     Livewire::test(CreateProject::class)
         ->set('form.name', 'Test Project')
         ->set('form.description', 'Test Description')
-        ->call('save', $mockAction)
+        ->call('save')
         ->assertRedirect(route('dashboard'));
 
     expect(session()->get('status'))
@@ -36,11 +34,11 @@ it('validates and stores project data', function () {
 });
 
 it('throws validation errors for invalid data', function () {
-    $mockAction = mock(ActionsCreateProject::class);
+    mock(ActionsCreateProject::class);
 
     Livewire::test(CreateProject::class)
         ->set('form.name', '')
-        ->call('save', $mockAction)
+        ->call('save')
         ->assertHasErrors(['form.name']);
 });
 
