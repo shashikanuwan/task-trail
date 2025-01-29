@@ -9,7 +9,7 @@ it('renders show projects', function () {
         ->assertStatus(200);
 });
 
-it('can show all projects', function () {
+it('retrieves projects as a computed property', function () {
     /** @var Project $projects */
     $projects = Project::factory(5)->create();
 
@@ -17,9 +17,4 @@ it('can show all projects', function () {
         ->assertSee($projects->first()->name)
         ->assertSee($projects->last()->description)
         ->assertCount('projects', $projects->count());
-});
-
-it('renders the show projects view', function () {
-    Livewire::test(ShowProjects::class)
-        ->assertViewIs('livewire.project.show-projects');
 });

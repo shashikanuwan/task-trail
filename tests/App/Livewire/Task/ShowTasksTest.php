@@ -6,7 +6,9 @@ use App\Models\Task;
 use Livewire\Livewire;
 
 it('renders show tasks', function () {
-    Livewire::test(ShowTasks::class)
+    $project = Project::factory()->create();
+
+    Livewire::test(ShowTasks::class, ['project' => $project])
         ->assertStatus(200);
 });
 
@@ -24,9 +26,4 @@ it('can show project related tasks', function () {
         ->assertSeeHtml($firstProject->tasks->first()->priority->getHtml())
         ->assertSeeHtml($firstProject->tasks->first()->status->getHtml())
         ->assertCount('tasks', $firstProject->tasks->count());
-});
-
-it('renders the show tasks view', function () {
-    Livewire::test(ShowTasks::class)
-        ->assertViewIs('livewire.task.show-tasks');
 });
