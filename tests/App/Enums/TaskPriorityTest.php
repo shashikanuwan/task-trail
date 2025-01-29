@@ -35,17 +35,17 @@ it('can get the correct value for HIGH priority', function () {
 // background color
 it('can get the correct background color for LOW priority', function () {
     $priority = TaskPriority::LOW;
-    expect($priority->getBgColor())->toBe('bg-slate-200');
+    expect($priority->getBgColor())->toBe('bg-slate-100');
 });
 
 it('can get the correct background color for MEDIUM priority', function () {
     $priority = TaskPriority::MEDIUM;
-    expect($priority->getBgColor())->toBe('bg-yellow-200');
+    expect($priority->getBgColor())->toBe('bg-yellow-100');
 });
 
 it('can get the correct background color for HIGH priority', function () {
     $priority = TaskPriority::HIGH;
-    expect($priority->getBgColor())->toBe('bg-rose-200');
+    expect($priority->getBgColor())->toBe('bg-rose-100');
 });
 
 // text color
@@ -67,21 +67,21 @@ it('can get the correct text color for HIGH priority', function () {
 // html
 it('can get the correct HTML for LOW priority', function () {
     $priority = TaskPriority::LOW;
-    expect($priority->getHtml())->toContain('bg-slate-200')
+    expect($priority->getHtml())->toContain('bg-slate-100')
         ->and($priority->getHtml())->toContain('text-slate-600')
         ->and($priority->getHtml())->toContain('Low');
 });
 
 it('can get the correct HTML for MEDIUM priority', function () {
     $priority = TaskPriority::MEDIUM;
-    expect($priority->getHtml())->toContain('bg-yellow-200')
+    expect($priority->getHtml())->toContain('bg-yellow-100')
         ->and($priority->getHtml())->toContain('text-yellow-600')
         ->and($priority->getHtml())->toContain('Medium');
 });
 
 it('can get the correct HTML for HIGH priority', function () {
     $priority = TaskPriority::HIGH;
-    expect($priority->getHtml())->toContain('bg-rose-200')
+    expect($priority->getHtml())->toContain('bg-rose-100')
         ->and($priority->getHtml())->toContain('text-rose-600')
         ->and($priority->getHtml())->toContain('High');
 });

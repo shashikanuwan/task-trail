@@ -11,6 +11,13 @@ class ShowTasks extends Component
 {
     public Collection $tasks;
 
+    public bool $showModal = false;
+
+    public function openModal(): void
+    {
+        $this->showModal = true;
+    }
+
     public function mount(Project $project): void
     {
         $this->tasks = $project->tasks;
