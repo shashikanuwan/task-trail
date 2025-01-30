@@ -1,5 +1,5 @@
 <div>
-    @foreach ($projects as $project)
+    @foreach ($this->projects as $project)
         <li class="relative group my-2">
             <a href="{{ route('project.tasks', $project) }}"
                wire:navigate

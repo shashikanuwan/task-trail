@@ -15,8 +15,8 @@ test('two factor authentication can be enabled', function () {
 
     $user = $user->fresh();
 
-    expect($user->two_factor_secret)->not->toBeNull();
-    expect($user->recoveryCodes())->toHaveCount(8);
+    expect($user->two_factor_secret)->not->toBeNull()
+        ->and($user->recoveryCodes())->toHaveCount(8);
 })->skip(function () {
     return ! Features::canManageTwoFactorAuthentication();
 }, 'Two factor authentication is not enabled.');

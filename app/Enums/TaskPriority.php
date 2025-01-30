@@ -20,9 +20,9 @@ enum TaskPriority: string
     public function getBgColor(): string
     {
         return match ($this) {
-            self::LOW => 'bg-slate-200',
-            self::MEDIUM => 'bg-yellow-200',
-            self::HIGH => 'bg-rose-200',
+            self::LOW => 'bg-slate-100',
+            self::MEDIUM => 'bg-yellow-100',
+            self::HIGH => 'bg-rose-100',
         };
     }
 
@@ -38,7 +38,7 @@ enum TaskPriority: string
     public function getHtml(): string
     {
         return sprintf(
-            '<span class="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded-md %s %s"> %s </span>',
+            '<span class="text-sm px-2 py-1 rounded %s %s"> %s </span>',
             $this->getBgColor(),
             $this->getTextColor(),
             $this->label()

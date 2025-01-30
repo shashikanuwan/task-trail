@@ -22,10 +22,10 @@ enum TaskStatus: string
     public function getBgColor(): string
     {
         return match ($this) {
-            self::PENDING => 'bg-slate-200',
-            self::IN_PROGRESS => 'bg-violet-200',
-            self::COMPLETED => 'bg-emerald-200',
-            self::BLOCKED => 'bg-rose-200',
+            self::PENDING => 'bg-slate-100',
+            self::IN_PROGRESS => 'bg-violet-100',
+            self::COMPLETED => 'bg-emerald-100',
+            self::BLOCKED => 'bg-rose-100',
         };
     }
 
@@ -42,7 +42,7 @@ enum TaskStatus: string
     public function getHtml(): string
     {
         return sprintf(
-            '<span class="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded-md %s %s"> %s </span>',
+            '<span class="text-sm px-2 py-1 rounded %s %s"> %s </span>',
             $this->getBgColor(),
             $this->getTextColor(),
             $this->label()
