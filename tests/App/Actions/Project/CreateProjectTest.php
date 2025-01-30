@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Project\CreateProject;
+use App\Models\Project;
 
 it('can create project', function () {
     resolve(CreateProject::class)
@@ -9,7 +10,7 @@ it('can create project', function () {
             'This is a description'
         );
 
-    $this->assertDatabaseHas('projects', [
+    $this->assertDatabaseHas(Project::class, [
         'name' => 'Todo app',
         'description' => 'This is a description',
     ]);

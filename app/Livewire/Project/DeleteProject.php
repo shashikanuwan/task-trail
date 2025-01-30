@@ -5,17 +5,15 @@ namespace App\Livewire\Project;
 use App\Actions\Project\DeleteProject as ActionsDeleteProject;
 use App\Models\Project;
 use Illuminate\Contracts\View\View;
-use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 class DeleteProject extends Component
 {
-    #[Locked]
-    public int $projectId;
+    public Project $project;
 
     public function delete(ActionsDeleteProject $deleteProject): void
     {
-        $deleteProject->execute(Project::query()->find($this->projectId));
+        $deleteProject->execute($this->project);
 
         session()->flash('status', 'Project deleted.');
 

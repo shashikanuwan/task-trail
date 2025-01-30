@@ -10,9 +10,9 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
+ * @property int $id
  * @property string $name
  * @property string $description
- * @property int $id
  * @property Collection<Task> $tasks
  */
 class Project extends Model

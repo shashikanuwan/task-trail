@@ -12,7 +12,7 @@ it('can delete task', function () {
     resolve(DeleteTask::class)
         ->execute($task);
 
-    assertDatabaseMissing('tasks', [
+    assertDatabaseMissing(Task::class, [
         'id' => $task->id,
     ]);
 });

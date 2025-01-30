@@ -1,6 +1,6 @@
 <div>
-    <button wire:click="openModal">
-        {{'Edit'}}
+    <button wire:click="openModal" class="text-blue-700">
+        {{'View'}}
     </button>
 
     <x-modal wire:model="showModal" maxWidth="2xl">

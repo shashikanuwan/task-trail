@@ -8,20 +8,22 @@ use App\Models\Task;
 use function Pest\Laravel\assertDatabaseHas;
 
 it('can update task', function () {
+    /** @var Task $task */
     $task = Task::factory()->create();
 
     resolve(UpdateTask::class)
         ->execute(
             $task,
-            'task 2',
-            'description 2',
+            'Fix translation issue',
+            'Translation issue description',
             TaskPriority::LOW,
             TaskStatus::IN_PROGRESS
         );
 
-    assertDatabaseHas('tasks', [
-        'name' => 'task 2',
-        'description' => 'description 2',
+    assertDatabaseHas(Task::class, [
+        'id' => $task->id,
+        'name' => 'Fix translation issue',
+        'description' => 'Translation issue description',
         'priority' => TaskPriority::LOW,
         'status' => TaskStatus::IN_PROGRESS,
     ]);

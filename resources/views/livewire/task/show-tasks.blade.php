@@ -12,13 +12,16 @@
                     @forelse ($tasks->where('status', $status) as $task)
                         <div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-6 shadow-lg rounded-lg cursor-pointer hover:shadow-md hover:dark:shadow-xl">
                             <div class="mb-3">
-                                <livewire:task.show-task :$task />
                                 <p class="text-lg font-semibold">{{ $task->name }}</p>
                                 <p class="text-sm text-gray-500 dark:text-gray-400 capitalize">
                                     {!! $task->priority->getHtml() !!}
                                 </p>
                             </div>
                             <p class="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">{{ $task->description }}</p>
+
+                            <div class="flex justify-center">
+                                <livewire:task.show-task :$task />
+                            </div>
                         </div>
                     @empty
 

@@ -4,6 +4,7 @@ use App\Actions\Task\CreateTask;
 use App\Enums\TaskPriority;
 use App\Enums\TaskStatus;
 use App\Models\Project;
+use App\Models\Task;
 
 use function Pest\Laravel\assertDatabaseHas;
 
@@ -13,16 +14,16 @@ it('can create task', function () {
 
     resolve(CreateTask::class)
         ->execute(
-            'task 1',
-            'description 1',
+            'Implement calculation logic',
+            'This is a description',
             TaskPriority::HIGH,
             TaskStatus::PENDING,
             $project
         );
 
-    assertDatabaseHas('tasks', [
-        'name' => 'task 1',
-        'description' => 'description 1',
+    assertDatabaseHas(Task::class, [
+        'name' => 'Implement calculation logic',
+        'description' => 'This is a description',
         'priority' => TaskPriority::HIGH,
         'status' => TaskStatus::PENDING,
         'project_id' => $project->id,
