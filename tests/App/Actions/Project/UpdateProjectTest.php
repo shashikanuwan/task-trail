@@ -10,11 +10,15 @@ it('can update project', function () {
     $project = Project::factory()->create();
 
     resolve(UpdateProject::class)
-        ->execute($project, 'Updated Project Name', 'Updated Project Description');
+        ->execute(
+            $project,
+            'Task app',
+            'This is a description'
+        );
 
-    assertDatabaseHas('projects', [
+    assertDatabaseHas(Project::class, [
         'id' => $project->id,
-        'name' => 'Updated Project Name',
-        'description' => 'Updated Project Description',
+        'name' => 'Task app',
+        'description' => 'This is a description',
     ]);
 });
