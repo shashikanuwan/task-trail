@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -9,10 +10,10 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
- * @property mixed|string $name
- * @property mixed|string $description
- * @property mixed $id
- * @property mixed $tasks
+ * @property int $id
+ * @property string $name
+ * @property string $description
+ * @property Collection<Task> $tasks
  */
 class Project extends Model
 {

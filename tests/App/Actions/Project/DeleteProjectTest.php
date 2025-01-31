@@ -9,9 +9,10 @@ it('can delete project', function () {
     /** @var Project $project */
     $project = Project::factory()->create();
 
-    resolve(DeleteProject::class)->execute($project);
+    resolve(DeleteProject::class)
+        ->execute($project);
 
-    assertDatabaseMissing('projects', [
+    assertDatabaseMissing(Project::class, [
         'id' => $project->id,
     ]);
 });

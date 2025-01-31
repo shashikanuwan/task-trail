@@ -11,15 +11,19 @@ it('can renders create project', function () {
         ->assertStatus(200);
 });
 
-it('can open and close the modal', function () {
+it('can open the modal', function () {
     Livewire::test(CreateProject::class)
         ->call('openModal')
-        ->assertSet('showModal', true)
+        ->assertSet('showModal', true);
+});
+
+it('can close the modal', function () {
+    Livewire::test(CreateProject::class)
         ->call('closeModal')
         ->assertSet('showModal', false);
 });
 
-it('validates and stores project data', function () {
+it('can create project', function () {
     mock(ActionsCreateProject::class)
         ->shouldReceive('execute');
 

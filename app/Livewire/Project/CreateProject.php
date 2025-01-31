@@ -8,9 +8,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
-/**
- * @method emit(string $string)
- */
 class CreateProject extends Component
 {
     public bool $showModal = false;

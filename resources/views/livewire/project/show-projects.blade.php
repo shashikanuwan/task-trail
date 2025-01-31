@@ -10,7 +10,7 @@
             <!-- Edit and Delete Buttons -->
             <div class="absolute top-0 right-0 hidden group-hover:flex space-x-2 mt-2 mr-2">
                 <livewire:project.edit-project :project="$project"/>
-                <livewire:project.delete-project :projectId="$project->id"/>
+                <livewire:project.delete-project :$project/>
             </div>
         </li>
     @endforeach

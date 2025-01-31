@@ -21,7 +21,7 @@ class CreateTask
         $task->description = $description;
         $task->priority = $taskPriority;
         $task->status = $taskStatus;
-        $task->project_id = $project->id;
+        $task->project()->associate($project);
         $task->save();
     }
 }

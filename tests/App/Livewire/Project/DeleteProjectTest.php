@@ -17,7 +17,7 @@ it('can delete a project and redirect', function () {
     mock(ActionsDeleteProject::class)
         ->shouldReceive('execute');
 
-    Livewire::test(DeleteProject::class, ['projectId' => $project->id])
+    Livewire::test(DeleteProject::class, ['project' => $project])
         ->call('delete')
         ->assertRedirect(route('dashboard'));
 
