@@ -35,7 +35,7 @@ it('can update project and redirect', function () {
         ->set('form.name', 'name updated')
         ->set('form.description', 'description updated')
         ->call('save')
-        ->assertRedirect(route('dashboard'));
+        ->assertRedirect(route('projects.tasks', $project->refresh()));
 
     expect(session()->get('status'))
         ->toBe('Project updated.');

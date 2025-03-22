@@ -16,6 +16,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/project/{project}/tasks', ShowTasks::class)
-        ->name('project.tasks');
+    Route::get('/projects/{project}/tasks', ShowTasks::class)
+        ->name('projects.tasks');
 });
