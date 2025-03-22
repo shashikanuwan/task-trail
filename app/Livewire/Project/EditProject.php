@@ -15,6 +15,8 @@ class EditProject extends Component
 
     public bool $showModal = false;
 
+    public Project $project;
+
     public function mount(Project $project): void
     {
         $this->form->setProject($project);
@@ -29,7 +31,11 @@ class EditProject extends Component
 
         session()->flash('status', 'Project updated.');
 
-        $this->redirectRoute('dashboard', navigate: true);
+        $this->project->refresh();
+
+        $this->redirectRoute('projects.tasks', [
+            'project' => $this->project,
+        ], navigate: true);
     }
 
     public function openModal(): void
