@@ -1,4 +1,4 @@
-# TaskTrail 🚀
+# TaskTrail - Open Source Project Management Tool 🚀
 
 Streamline your projects, simplify your tasks.
 
@@ -8,29 +8,29 @@ TaskTrail is a robust, feature-packed project management tool designed to help t
 
 ## Features ✨
 
-- **User Management**  
-  Create, assign, and manage users with role-based permissions.  
-  - Admins can oversee all projects and tasks, while users focus on their assigned work.
+### User Management
+- Easily create, assign, and manage users with role-based permissions.
+- Admins have full access to oversee projects and tasks, while users focus on their assigned work.
 
-- **Project Management**  
-  Create, update, and delete projects effortlessly.  
-  - View all project details in one place.
+### Project Management
+- Effortlessly create, update, and delete projects.
+- View all project details in one central location for better tracking.
 
-- **Task Management**  
-  Assign tasks to team members and set priorities.  
-  - Change task statuses (Pending, In Progress, Completed) with ease.  
-  - Add comments and notes for better collaboration.
+### Task Management
+- Assign tasks to team members and set task priorities.
+- Seamlessly change task statuses (Pending, In Progress, Completed).
+- Add comments and notes to tasks for improved collaboration.
 
-- **Dashboards**  
-  - **Admin Dashboard**: Gain insights into all tasks and projects.  
-  - **User Dashboard**: View and track assigned tasks with status updates.
+### Dashboards
+- **Admin Dashboard:** Get insights into the progress of all tasks and projects at a glance.
+- **User Dashboard:** Track and manage your assigned tasks with real-time status updates.
 
-- **Notifications**  
-  - Get instant updates on task assignments and status changes.  
-  - Stay informed when tasks are completed.
+### Notifications
+- Receive instant updates on task assignments and status changes.
+- Stay informed when tasks are completed or updated.
 
-- **Responsive Design**  
-  Built with Tailwind CSS for a sleek and responsive interface, ensuring a seamless experience on any device.
+### Responsive Design
+- Built with **Tailwind CSS** for a sleek, modern, and fully responsive interface, ensuring a seamless user experience on any device.
 
 ---
 
@@ -93,24 +93,16 @@ Ensure you have the following installed:
 
 ---
 
-## Roles & Permissions 🔐
-
-TaskTrail comes with role-based access control for:
-- **Admin**: Manage projects, tasks, users, and view all dashboards.
-- **User**: View and manage assigned tasks.
-
----
-
 ## Built With 🛠️
 
-- **Laravel** – Full stack framework.
+- **Laravel + Livewire** – Full stack framework.
 - **Tailwind CSS** – Responsive and modern UI design.
 
 ---
 
 ## Contributing 🤝
 
-We welcome contributions to TaskTrail! To contribute:
+TaskTrail is open-source and community-driven. Contributions are welcome! Please fork the repository and submit pull requests to help improve the project.
 
 1. Fork the repository.  
 2. Create a feature branch:
@@ -138,12 +130,6 @@ We welcome contributions to TaskTrail! To contribute:
 ## License 📜
 
 This project is licensed under the MIT License.
-
----
-
-## Screenshots 📸
-
-Coming soon!
 
 ---
 
