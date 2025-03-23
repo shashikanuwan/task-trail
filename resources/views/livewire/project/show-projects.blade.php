@@ -4,7 +4,7 @@
             <a href="{{ route('projects.tasks', $project) }}"
                wire:navigate
                class="block py-2 px-3 rounded-md
-               {{ request()->is('project/' . $project->slug . '/tasks') ? 'font-bold  bg-zinc-400 dark:bg-zinc-500' : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600' }}">
+               {{ request()->is('projects/' . $project->slug . '/tasks') ? 'font-bold  bg-zinc-400 dark:bg-zinc-500' : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600' }}">
                 {{ $project->name }}
             </a>
             <!-- Edit and Delete Buttons -->

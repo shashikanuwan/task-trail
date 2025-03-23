@@ -9,6 +9,8 @@ use Livewire\Component;
 
 class ShowTasks extends Component
 {
+    public Project $project;
+
     public Collection $tasks;
 
     public bool $showModal = false;

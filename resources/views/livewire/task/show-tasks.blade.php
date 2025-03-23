@@ -1,4 +1,9 @@
 <div class="overflow-x-auto">
+
+    <x-board.sub-navigation>
+        <livewire:task.create-task :project="$this->project"/>
+    </x-board.sub-navigation>
+
     <div class="grid grid-flow-col auto-cols-[22rem] gap-4">
         @foreach (\App\Enums\TaskStatus::cases() as $status)
             <div class="flex flex-col rounded-lg shadow-md p-4 h-[calc(100vh-12rem)] dark:bg-gray-700 bg-gray-200">

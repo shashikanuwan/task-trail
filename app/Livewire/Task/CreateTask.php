@@ -1,37 +1,35 @@
 <?php
 
-namespace App\Livewire\Project;
+namespace App\Livewire\Task;
 
-use App\Actions\Project\UpdateProject;
-use App\Livewire\Forms\ProjectForm;
+use App\Actions\Task\CreateTask as ActionsCreateTask;
+use App\Livewire\Forms\TaskForm;
 use App\Models\Project;
 use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
-class EditProject extends Component
+class CreateTask extends Component
 {
-    public ProjectForm $form;
-
     public bool $showModal = false;
+
+    public TaskForm $form;
 
     public Project $project;
 
     public function mount(Project $project): void
     {
-        $this->form->setProject($project);
+        $this->form->project = $project;
     }
 
     /**
      * @throws ValidationException
      */
-    public function save(UpdateProject $updateProject): void
+    public function save(ActionsCreateTask $createTask): void
     {
-        $this->form->update($updateProject);
+        $this->form->store($createTask);
 
-        session()->flash('status', 'Project updated.');
-
-        $this->project->refresh();
+        session()->flash('status', 'Task saved.');
 
         $this->redirectRoute('projects.tasks', $this->project, navigate: true);
     }
@@ -48,6 +46,6 @@ class EditProject extends Component
 
     public function render(): View
     {
-        return view('livewire.project.edit-project');
+        return view('livewire.task.create-task');
     }
 }

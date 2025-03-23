@@ -1,5 +1,5 @@
 <x-board-layout>
+    <x-board.sub-navigation :title='"This is Dashboard"'>
 
-    <livewire:task.show-tasks />
-
+    </x-board.sub-navigation>
 </x-board-layout>
