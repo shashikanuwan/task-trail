@@ -4,15 +4,8 @@
 
         <div class="grid grid-cols-12 h-screen pt-16">
             <x-board.side-navigation/>
-
-            <!-- Main Area -->
             <div class="col-span-10 px-6 dark:bg-gray-800 bg-gray-100">
-                <x-board.sub-navigation/>
-
-                <div class="flex gap-6">
-                    <!-- Content Aria -->
-                    {{ $slot }}
-                </div>
+                {{$slot}}
             </div>
         </div>
     </div>

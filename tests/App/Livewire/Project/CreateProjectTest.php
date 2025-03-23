@@ -4,6 +4,7 @@ namespace Tests\App\Livewire;
 
 use App\Actions\Project\CreateProject as ActionsCreateProject;
 use App\Livewire\Project\CreateProject;
+use App\Models\Project;
 use Livewire\Livewire;
 
 it('can renders create project', function () {
@@ -31,7 +32,7 @@ it('can create project', function () {
         ->set('form.name', 'Test Project')
         ->set('form.description', 'Test Description')
         ->call('save')
-        ->assertRedirect(route('dashboard'));
+        ->assertRedirect(route('projects.tasks', Project::query()->latest()->first()));
 
     expect(session()->get('status'))
         ->toBe('Project saved.');

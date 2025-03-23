@@ -19,11 +19,11 @@ class CreateProject extends Component
      */
     public function save(ActionsCreateProject $createProject): void
     {
-        $this->form->store($createProject);
+        $project = $this->form->store($createProject);
 
         session()->flash('status', 'Project saved.');
 
-        $this->redirectRoute('dashboard', navigate: true);
+        $this->redirectRoute('projects.tasks', $project, navigate: true);
     }
 
     public function openModal(): void

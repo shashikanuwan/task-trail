@@ -6,18 +6,23 @@ use App\Actions\Project\CreateProject;
 use App\Actions\Project\UpdateProject;
 use App\Models\Project;
 use Illuminate\Validation\ValidationException;
-use Livewire\Attributes\Validate;
 use Livewire\Form;
 
 class ProjectForm extends Form
 {
     public ?Project $project;
 
-    #[Validate('required|max:50')]
     public string $name = '';
 
-    #[Validate('required|max:255')]
     public string $description = '';
+
+    protected function rules(): array
+    {
+        return [
+            'name' => ['required', 'max:50'],
+            'description' => ['required', 'max:255'],
+        ];
+    }
 
     public function setProject(Project $project): void
     {
@@ -31,13 +36,15 @@ class ProjectForm extends Form
     /**
      * @throws ValidationException
      */
-    public function store(CreateProject $createProject): void
+    public function store(CreateProject $createProject): Project
     {
         $this->validate();
 
-        $createProject->execute($this->name, $this->description);
+        $project = $createProject->execute($this->name, $this->description);
 
         $this->reset();
+
+        return $project;
     }
 
     /**
